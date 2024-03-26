@@ -1,0 +1,279 @@
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2024-03-26 22:23:16,626 [   2323]   WARN - #c.i.o.v.n.p.l.VfsLog - VFS Log version differs from the implementation version: log null vs implementation -43
+2024-03-26 22:23:17,142 [   2839]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "VSCode" not found PluginDescriptor(name=Terminal, id=org.jetbrains.plugins.terminal, descriptorPath=plugin.xml, path=~/idea-IC-231.9161.38/plugins/terminal, version=231.9161.38, package=null, isBundled=true)
+2024-03-26 22:23:18,596 [   4293]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2024-03-26 22:23:18,625 [   4322]   WARN - #c.j.p.PluginClassPathRuntimeCustomizer - There was more than one class loaded in Projector Plugin classloader - this is likely a bug!
+2024-03-26 22:23:18,661 [   4358] SEVERE - #c.i.i.IdeStarter - Cannot reopen recent projects
+java.lang.NullPointerException
+	at com.intellij.ide.RecentProjectsManagerBase.openMultiple(RecentProjectsManagerBase.kt:912)
+	at com.intellij.ide.RecentProjectsManagerBase.reopenLastProjectsOnStart$suspendImpl(RecentProjectsManagerBase.kt:454)
+	at com.intellij.ide.RecentProjectsManagerBase.reopenLastProjectsOnStart(RecentProjectsManagerBase.kt)
+	at com.intellij.idea.IdeStarter.openProjectIfNeeded$suspendImpl(IdeStarter.kt:139)
+	at com.intellij.idea.IdeStarter.openProjectIfNeeded(IdeStarter.kt)
+	at com.intellij.idea.IdeStarter$start$2.invokeSuspend(IdeStarter.kt:71)
+	at com.intellij.idea.IdeStarter$start$2.invoke(IdeStarter.kt)
+	at com.intellij.idea.IdeStarter$start$2.invoke(IdeStarter.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:264)
+	at com.intellij.idea.IdeStarter.start$suspendImpl(IdeStarter.kt:68)
+	at com.intellij.idea.IdeStarter.start(IdeStarter.kt)
+	at com.intellij.idea.ApplicationLoader.initApplicationImpl(ApplicationLoader.kt:191)
+	at com.intellij.idea.ApplicationLoader.access$initApplicationImpl(ApplicationLoader.kt:1)
+	at com.intellij.idea.ApplicationLoader$initApplicationImpl$1.invokeSuspend(ApplicationLoader.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+2024-03-26 22:23:18,667 [   4364] SEVERE - #c.i.i.IdeStarter - IntelliJ IDEA 2023.1.3  Build #IC-231.9161.38
+2024-03-26 22:23:18,668 [   4365] SEVERE - #c.i.i.IdeStarter - JDK: 17.0.7; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2024-03-26 22:23:18,669 [   4366] SEVERE - #c.i.i.IdeStarter - OS: Linux
+Info  | RdCoroutineScope          | 26:DefaultDispatcher-worker-15 | RdCoroutineHost overridden 
+2024-03-26 22:23:31,919 [  17616]   WARN - #c.i.o.a.i.ActionUpdater - 634 ms to grab EDT for BackAction#update@MainToolbar (com.intellij.ide.actions.BackAction)
+2024-03-26 22:23:34,784 [  20481]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `com.android.tools.idea.gradle.model.impl.IdeCompositeBuildMapImpl`
+2024-03-26 22:23:34,786 [  20483]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `com.android.tools.idea.gradle.project.sync.IdeSyncExecutionReport`
+2024-03-26 22:23:35,005 [  20702]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `org.jetbrains.kotlin.android.synthetic.idea.AndroidExtensionProperties`
+2024-03-26 22:23:35,442 [  21139]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `org.jetbrains.kotlin.android.synthetic.idea.AndroidExtensionProperties`
+2024-03-26 22:23:35,478 [  21175]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `org.jetbrains.kotlin.android.synthetic.idea.AndroidExtensionProperties`
+2024-03-26 22:23:35,719 [  21416]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `org.jetbrains.kotlin.android.synthetic.idea.AndroidExtensionProperties`
+2024-03-26 22:23:35,751 [  21448]   WARN - #c.i.o.e.s.p.m.ExternalProjectsDataStorage - Cannot find class `com.android.tools.idea.gradle.project.sync.idea.KotlinProperties`
+2024-03-26 22:24:40,066 [  85763] SEVERE - #c.i.v.l.d.i.IndexDiagnosticRunner - IdeaLoggingEvent[message=Index is corrupted, throwable=java.lang.RuntimeException: Index is corrupted
+	at com.intellij.vcs.log.data.index.IndexDiagnosticRunner.runDiagnostic(IndexDiagnosticRunner.kt:54)
+	at com.intellij.vcs.log.data.index.IndexDiagnosticRunner.onDataPackChange(IndexDiagnosticRunner.kt:66)
+	at com.intellij.vcs.log.data.VcsLogData.fireDataPackChangeEvent(VcsLogData.java:243)
+	at com.intellij.vcs.log.data.VcsLogRefresherImpl.lambda$new$0(VcsLogRefresherImpl.java:80)
+	at com.intellij.vcs.log.data.SingleTaskController.taskCompleted(SingleTaskController.java:152)
+	at com.intellij.vcs.log.data.VcsLogRefresherImpl$MyRefreshTask.run(VcsLogRefresherImpl.java:210)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:429)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:114)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsynchronously$6(CoreProgressManager.java:480)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:252)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:186)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$13(CoreProgressManager.java:604)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:679)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:635)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:603)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:60)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:173)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:252)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]
+2024-03-26 22:24:50,754 [  96451]   WARN - #o.j.i.maven - doScheduleUpdateProjects: Linear Import is disabled
+2024-03-26 22:24:51,257 [  96954]   WARN - #o.j.i.maven - forceUpdateAllProjectsOrFindAllAvailablePomFiles: Linear Import is disabled
+2024-03-26 22:24:51,257 [  96954]   WARN - #o.j.i.maven - doScheduleUpdateProjects: Linear Import is disabled
+2024-03-26 22:24:57,389 [ 103086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.plugins:maven-jar-plugin::2.4, was also in node: null
+2024-03-26 22:24:57,891 [ 103588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven:maven-archiver::2.5, was also in node: null
+2024-03-26 22:24:57,892 [ 103589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.plexus:plexus-interpolation::1.15, was also in node: null
+2024-03-26 22:24:57,892 [ 103589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.plexus:plexus-archiver::2.1, was also in node: null
+2024-03-26 22:24:57,892 [ 103589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.plexus:plexus-io::2.0.2, was also in node: null
+2024-03-26 22:24:58,906 [ 104603]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.plugins:maven-surefire-plugin::2.12.4, was also in node: null
+2024-03-26 22:24:59,915 [ 105612]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.surefire:surefire-booter::2.12.4, was also in node: null
+2024-03-26 22:24:59,915 [ 105612]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.surefire:surefire-api::2.12.4, was also in node: null
+2024-03-26 22:24:59,915 [ 105612]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.surefire:maven-surefire-common::2.12.4, was also in node: null
+2024-03-26 22:24:59,915 [ 105612]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.commons:commons-lang3::3.1, was also in node: null
+2024-03-26 22:24:59,916 [ 105613]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.maven.plugin-tools:maven-plugin-annotations::3.1, was also in node: null
+2024-03-26 22:25:10,040 [ 115737]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+2024-03-26 22:26:43,234 [ 208931]   WARN - #o.j.i.maven - doScheduleUpdateProjects: Linear Import is disabled
+2024-03-26 22:26:43,767 [ 209464]   WARN - #git4idea.repo.GitUntrackedFilesHolder - object file .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5 is empty
+object file .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5 is empty
+loose object 8e8ebb41500609b4da6193238da0ba63b0d37cb5 (stored in .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5) is corrupt
+com.intellij.openapi.vcs.VcsException: object file .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5 is empty
+object file .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5 is empty
+loose object 8e8ebb41500609b4da6193238da0ba63b0d37cb5 (stored in .git/objects/8e/8ebb41500609b4da6193238da0ba63b0d37cb5) is corrupt
+	at git4idea.commands.GitCommandResult.throwOnError(GitCommandResult.java:156)
+	at git4idea.commands.GitCommandResult.getOutputOrThrow(GitCommandResult.java:145)
+	at git4idea.index.GitIndexStatusUtilKt.getFileStatus(GitIndexStatusUtil.kt:84)
+	at git4idea.repo.GitUntrackedFilesHolder.refreshFiles(GitUntrackedFilesHolder.java:351)
+	at git4idea.repo.GitUntrackedFilesHolder.update(GitUntrackedFilesHolder.java:249)
+	at com.intellij.util.ui.update.DisposableUpdate$1.doRun(DisposableUpdate.java:31)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:186)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$13(CoreProgressManager.java:604)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:679)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:635)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:603)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:60)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:173)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.runUnderDisposeAwareIndicator(BackgroundTaskUtil.java:361)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.runUnderDisposeAwareIndicator(BackgroundTaskUtil.java:339)
+	at com.intellij.util.ui.update.DisposableUpdate.run(DisposableUpdate.java:19)
+	at com.intellij.util.ui.update.MergingUpdateQueue.execute(MergingUpdateQueue.java:350)
+	at com.intellij.util.ui.update.MergingUpdateQueue.execute(MergingUpdateQueue.java:340)
+	at com.intellij.util.ui.update.MergingUpdateQueue.doExecute(MergingUpdateQueue.java:297)
+	at com.intellij.util.ui.update.MergingUpdateQueue.flush(MergingUpdateQueue.java:280)
+	at com.intellij.util.ui.update.MergingUpdateQueue.run(MergingUpdateQueue.java:245)
+	at com.intellij.util.concurrency.QueueProcessor.runSafely(QueueProcessor.java:249)
+	at com.intellij.util.Alarm$Request.runSafely(Alarm.java:365)
+	at com.intellij.util.Alarm$Request.run(Alarm.java:354)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at com.intellij.util.concurrency.SchedulingWrapper$MyScheduledFutureTask.run(SchedulingWrapper.java:272)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:248)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$200(BoundedTaskExecutor.java:28)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.executeFirstTaskAndHelpQueue(BoundedTaskExecutor.java:221)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:227)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.run(BoundedTaskExecutor.java:210)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-03-26 22:26:44,408 [ 210105]   WARN - #git4idea.annotate.GitAnnotationProvider - bad revision 'HEAD'
+com.intellij.openapi.vcs.VcsException: bad revision 'HEAD'
+	at git4idea.commands.GitCommandResult.throwOnError(GitCommandResult.java:156)
+	at git4idea.commands.GitCommandResult.getOutputOrThrow(GitCommandResult.java:145)
+	at git4idea.history.GitHistoryUtils.getCurrentRevision(GitHistoryUtils.java:199)
+	at git4idea.annotate.GitAnnotationProvider.getLastRevision(GitAnnotationProvider.java:507)
+	at git4idea.annotate.GitAnnotationProvider.getPathAndRevision(GitAnnotationProvider.java:488)
+	at git4idea.annotate.GitAnnotationProvider.populateCache(GitAnnotationProvider.java:458)
+	at com.intellij.openapi.vcs.annotate.AnnotationsPreloader$schedulePreloading$1.doRun(AnnotationsPreloader.kt:53)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:186)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$13(CoreProgressManager.java:604)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:679)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:635)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:603)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:60)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:173)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.runUnderDisposeAwareIndicator(BackgroundTaskUtil.java:361)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.runUnderDisposeAwareIndicator(BackgroundTaskUtil.java:339)
+	at com.intellij.util.ui.update.DisposableUpdate.run(DisposableUpdate.java:19)
+	at com.intellij.util.ui.update.MergingUpdateQueue.execute(MergingUpdateQueue.java:350)
+	at com.intellij.util.ui.update.MergingUpdateQueue.execute(MergingUpdateQueue.java:340)
+	at com.intellij.util.ui.update.MergingUpdateQueue.doExecute(MergingUpdateQueue.java:297)
+	at com.intellij.util.ui.update.MergingUpdateQueue.flush(MergingUpdateQueue.java:280)
+	at com.intellij.util.ui.update.MergingUpdateQueue.run(MergingUpdateQueue.java:245)
+	at com.intellij.util.concurrency.QueueProcessor.runSafely(QueueProcessor.java:249)
+	at com.intellij.util.Alarm$Request.runSafely(Alarm.java:365)
+	at com.intellij.util.Alarm$Request.run(Alarm.java:354)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at com.intellij.util.concurrency.SchedulingWrapper$MyScheduledFutureTask.run(SchedulingWrapper.java:272)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:248)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$200(BoundedTaskExecutor.java:28)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.executeFirstTaskAndHelpQueue(BoundedTaskExecutor.java:221)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:227)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.run(BoundedTaskExecutor.java:210)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-03-26 22:26:46,402 [ 212099]   WARN - #o.j.i.maven - forceUpdateAllProjectsOrFindAllAvailablePomFiles: Linear Import is disabled
+2024-03-26 22:26:46,402 [ 212099]   WARN - #o.j.i.maven - doScheduleUpdateProjects: Linear Import is disabled
+2024-03-26 22:30:24,380 [ 430077]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.nflow:nflow-jetty::9.0.0, was also in node: null
+2024-03-26 22:30:24,380 [ 430077]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.nflow:nflow-rest-api-jax-rs::9.0.0, was also in node: null
+2024-03-26 22:30:24,380 [ 430077]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.nflow:nflow-rest-api-common::9.0.0, was also in node: null
+2024-03-26 22:30:24,380 [ 430077]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.nflow:nflow-engine::9.0.0, was also in node: null
+2024-03-26 22:30:24,380 [ 430077]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-annotations::2.2.15, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.validation:jakarta.validation-api::3.0.2, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish:jakarta.el::4.0.2, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.hibernate.validator:hibernate-validator::8.0.1.Final, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.ws.rs:jakarta.ws.rs-api::3.1.0, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.el:jakarta.el-api::4.0.0, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.jboss.logging:jboss-logging::3.4.3.Final, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml:classmate::1.5.1, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.nflow:nflow-server-common::9.0.0, was also in node: null
+2024-03-26 22:30:24,381 [ 430078]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-context::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-aop::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-beans::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-core::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-expression::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-jdbc::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-tx::6.0.11, was also in node: null
+2024-03-26 22:30:24,382 [ 430079]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-databind::2.15.2, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-annotations::2.15.2, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.datatype:jackson-datatype-joda::2.15.2, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-core::2.15.2, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading joda-time:joda-time::2.10.14, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading joda-time:joda-time::2.12.5, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.inject:jakarta.inject-api::2.0.1, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.annotation:jakarta.annotation-api::2.1.1, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.zaxxer:HikariCP::5.0.1, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:slf4j-api::2.0.0-alpha1, was also in node: null
+2024-03-26 22:30:24,383 [ 430080]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.commons:commons-lang3::3.13.0, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-web::6.0.11, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:log4j-over-slf4j::2.0.7, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:jcl-over-slf4j::2.0.7, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading ch.qos.logback:logback-classic::1.4.11, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading ch.qos.logback:logback-core::1.4.11, was also in node: null
+2024-03-26 22:30:24,384 [ 430081]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:jul-to-slf4j::2.0.7, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.nitorcreations:core-utils::1.4, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-server::11.0.15, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api::5.0.2, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-http::11.0.15, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-util::11.0.15, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-io::11.0.15, was also in node: null
+2024-03-26 22:30:24,385 [ 430082]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:slf4j-api::2.0.5, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-servlet::11.0.15, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-security::11.0.15, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.jetty:jetty-jmx::11.0.15, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-frontend-jaxrs::4.0.2, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-core::4.0.2, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish.jaxb:jaxb-runtime::3.0.2, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish.jaxb:jaxb-core::3.0.2, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.bind:jakarta.xml.bind-api::3.0.1, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish.jaxb:txw2::3.0.2, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.istack:istack-commons-runtime::4.0.1, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.woodstox:woodstox-core::6.5.1, was also in node: null
+2024-03-26 22:30:24,386 [ 430083]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.woodstox:stax2-api::4.2.1, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.ws.xmlschema:xmlschema-core::2.3.0, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.eclipse.angus:angus-activation::2.0.1, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.ws.rs:jakarta.ws.rs-api::3.0.0, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-transports-http::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-security::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.activation:jakarta.activation-api::2.1.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-features-logging::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.ws:jakarta.xml.ws-api::3.0.1, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-management::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-rs-service-description-openapi-v3::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-rs-service-description-common-openapi::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.cxf:cxf-rt-rs-service-description-swagger-ui::4.0.2, was also in node: null
+2024-03-26 22:30:24,387 [ 430084]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-jaxrs2-jakarta::2.2.11, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-jaxrs2-jakarta::2.2.15, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.github.classgraph:classgraph::4.8.154, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.javassist:javassist::3.29.2-GA, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-models-jakarta::2.2.15, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-annotations::2.15.1, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-annotations-jakarta::2.2.15, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-integration-jakarta::2.2.15, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.swagger.core.v3:swagger-core-jakarta::2.2.15, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.commons:commons-lang3::3.12.0, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:slf4j-api::1.7.35, was also in node: null
+2024-03-26 22:30:24,388 [ 430085]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.yaml:snakeyaml::2.0, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.bind:jakarta.xml.bind-api::3.0.0, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-databind::2.15.1, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.dataformat:jackson-dataformat-yaml::2.15.1, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-core::2.15.1, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.datatype:jackson-datatype-jsr310::2.15.1, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider::2.15.1, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider::2.15.2, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-base::2.15.2, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations::2.15.2, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.activation:jakarta.activation-api::2.1.0, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-jcl::6.0.11, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.micrometer:micrometer-observation::1.10.9, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.micrometer:micrometer-commons::1.10.9, was also in node: null
+2024-03-26 22:30:24,389 [ 430086]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.h2database:h2::2.2.220, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.dropwizard.metrics:metrics-jakarta-servlets::4.2.19, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.dropwizard.metrics:metrics-core::4.2.19, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.dropwizard.metrics:metrics-healthchecks::4.2.19, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.dropwizard.metrics:metrics-json::4.2.19, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-core::2.12.7, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.core:jackson-databind::2.12.7.1, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.dropwizard.metrics:metrics-jvm::4.2.19, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.helger:profiler::1.1.1, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.bind:jakarta.xml.bind-api::4.0.0, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.ws:jakarta.xml.ws-api::4.0.0, was also in node: null
+2024-03-26 22:30:24,390 [ 430087]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading jakarta.xml.soap:jakarta.xml.soap-api::3.0.0, was also in node: null
+2024-03-26 22:34:16,067 [ 661764]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
