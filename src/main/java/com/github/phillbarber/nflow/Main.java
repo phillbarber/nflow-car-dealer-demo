@@ -5,6 +5,8 @@ import io.nflow.jetty.StartNflow;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        new StartNflow().startJetty(7500, "local", "");
+        StartNflow startNflow = new StartNflow();
+        startNflow.registerSpringContext(CreditApplicationWorkflow.class);
+        startNflow.startJetty(7500, "local", "");
     }
 }

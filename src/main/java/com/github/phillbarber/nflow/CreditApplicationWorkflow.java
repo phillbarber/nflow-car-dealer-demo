@@ -1,26 +1,16 @@
 package com.github.phillbarber.nflow;
 
-import static io.nflow.engine.workflow.definition.NextAction.moveToState;
-import static io.nflow.engine.workflow.definition.WorkflowStateType.end;
-import static io.nflow.engine.workflow.definition.WorkflowStateType.manual;
-import static io.nflow.engine.workflow.definition.WorkflowStateType.start;
-import static org.joda.time.Duration.ZERO;
-import static org.slf4j.LoggerFactory.getLogger;
+import io.nflow.engine.workflow.curated.State;
+import io.nflow.engine.workflow.definition.*;
+import org.slf4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-import org.slf4j.Logger;
-
-import io.nflow.engine.workflow.curated.State;
-import io.nflow.engine.workflow.definition.NextAction;
-import io.nflow.engine.workflow.definition.StateExecution;
-import io.nflow.engine.workflow.definition.StateVar;
-import io.nflow.engine.workflow.definition.WorkflowDefinition;
-import io.nflow.engine.workflow.definition.WorkflowSettings;
-import io.nflow.engine.workflow.definition.WorkflowState;
-import io.nflow.engine.workflow.definition.WorkflowStateType;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import static io.nflow.engine.workflow.definition.NextAction.moveToState;
+import static io.nflow.engine.workflow.definition.WorkflowStateType.*;
+import static org.joda.time.Duration.ZERO;
+import static org.slf4j.LoggerFactory.getLogger;
 
 
 @Component
