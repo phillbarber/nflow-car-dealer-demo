@@ -1,0 +1,104 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< org.example:untitled >------------------------
+[INFO] Building untitled 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ untitled ---
+[INFO] org.example:untitled:jar:1.0-SNAPSHOT
+[INFO] \- io.nflow:nflow-jetty:jar:9.0.0:compile
+[INFO]    +- io.nflow:nflow-rest-api-jax-rs:jar:9.0.0:compile
+[INFO]    |  +- io.nflow:nflow-rest-api-common:jar:9.0.0:compile
+[INFO]    |  |  \- io.swagger.core.v3:swagger-annotations:jar:2.2.15:compile
+[INFO]    |  +- jakarta.ws.rs:jakarta.ws.rs-api:jar:3.1.0:compile
+[INFO]    |  +- jakarta.validation:jakarta.validation-api:jar:3.0.2:compile
+[INFO]    |  +- org.glassfish:jakarta.el:jar:4.0.2:runtime
+[INFO]    |  |  \- jakarta.el:jakarta.el-api:jar:4.0.0:runtime
+[INFO]    |  \- org.hibernate.validator:hibernate-validator:jar:8.0.1.Final:compile
+[INFO]    |     +- org.jboss.logging:jboss-logging:jar:3.4.3.Final:compile
+[INFO]    |     \- com.fasterxml:classmate:jar:1.5.1:compile
+[INFO]    +- io.nflow:nflow-server-common:jar:9.0.0:compile
+[INFO]    |  +- io.nflow:nflow-engine:jar:9.0.0:compile
+[INFO]    |  |  +- org.springframework:spring-context:jar:6.0.11:compile
+[INFO]    |  |  |  +- org.springframework:spring-aop:jar:6.0.11:compile
+[INFO]    |  |  |  \- org.springframework:spring-expression:jar:6.0.11:compile
+[INFO]    |  |  +- org.springframework:spring-jdbc:jar:6.0.11:compile
+[INFO]    |  |  |  \- org.springframework:spring-tx:jar:6.0.11:compile
+[INFO]    |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.15.2:compile
+[INFO]    |  |  +- joda-time:joda-time:jar:2.12.5:compile
+[INFO]    |  |  +- jakarta.inject:jakarta.inject-api:jar:2.0.1:compile
+[INFO]    |  |  \- com.zaxxer:HikariCP:jar:5.0.1:compile
+[INFO]    |  +- org.slf4j:slf4j-api:jar:2.0.7:compile
+[INFO]    |  +- org.slf4j:log4j-over-slf4j:jar:2.0.7:compile
+[INFO]    |  +- org.slf4j:jcl-over-slf4j:jar:2.0.7:compile
+[INFO]    |  +- ch.qos.logback:logback-classic:jar:1.4.11:compile
+[INFO]    |  |  \- ch.qos.logback:logback-core:jar:1.4.11:compile
+[INFO]    |  \- org.slf4j:jul-to-slf4j:jar:2.0.7:compile
+[INFO]    +- com.nitorcreations:core-utils:jar:1.4:compile
+[INFO]    +- org.eclipse.jetty:jetty-server:jar:11.0.15:compile
+[INFO]    |  +- org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2:compile
+[INFO]    |  +- org.eclipse.jetty:jetty-http:jar:11.0.15:compile
+[INFO]    |  \- org.eclipse.jetty:jetty-io:jar:11.0.15:compile
+[INFO]    +- org.eclipse.jetty:jetty-servlet:jar:11.0.15:compile
+[INFO]    |  \- org.eclipse.jetty:jetty-security:jar:11.0.15:compile
+[INFO]    +- org.eclipse.jetty:jetty-jmx:jar:11.0.15:compile
+[INFO]    |  \- org.eclipse.jetty:jetty-util:jar:11.0.15:compile
+[INFO]    +- org.apache.cxf:cxf-rt-frontend-jaxrs:jar:4.0.2:compile
+[INFO]    |  +- org.apache.cxf:cxf-core:jar:4.0.2:compile
+[INFO]    |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:3.0.2:compile
+[INFO]    |  |  |  \- org.glassfish.jaxb:jaxb-core:jar:3.0.2:compile
+[INFO]    |  |  |     +- org.glassfish.jaxb:txw2:jar:3.0.2:compile
+[INFO]    |  |  |     \- com.sun.istack:istack-commons-runtime:jar:4.0.1:compile
+[INFO]    |  |  +- com.fasterxml.woodstox:woodstox-core:jar:6.5.1:compile
+[INFO]    |  |  |  \- org.codehaus.woodstox:stax2-api:jar:4.2.1:compile
+[INFO]    |  |  \- org.apache.ws.xmlschema:xmlschema-core:jar:2.3.0:compile
+[INFO]    |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
+[INFO]    |  +- org.apache.cxf:cxf-rt-transports-http:jar:4.0.2:compile
+[INFO]    |  +- org.apache.cxf:cxf-rt-security:jar:4.0.2:compile
+[INFO]    |  \- org.eclipse.angus:angus-activation:jar:2.0.1:compile
+[INFO]    +- org.apache.cxf:cxf-rt-features-logging:jar:4.0.2:compile
+[INFO]    +- org.apache.cxf:cxf-rt-management:jar:4.0.2:compile
+[INFO]    +- org.apache.cxf:cxf-rt-rs-service-description-openapi-v3:jar:4.0.2:compile
+[INFO]    |  +- org.apache.cxf:cxf-rt-rs-service-description-common-openapi:jar:4.0.2:compile
+[INFO]    |  \- org.apache.cxf:cxf-rt-rs-service-description-swagger-ui:jar:4.0.2:compile
+[INFO]    +- io.swagger.core.v3:swagger-jaxrs2-jakarta:jar:2.2.15:compile
+[INFO]    |  +- io.github.classgraph:classgraph:jar:4.8.154:compile
+[INFO]    |  +- org.javassist:javassist:jar:3.29.2-GA:compile
+[INFO]    |  +- io.swagger.core.v3:swagger-models-jakarta:jar:2.2.15:compile
+[INFO]    |  +- io.swagger.core.v3:swagger-annotations-jakarta:jar:2.2.15:compile
+[INFO]    |  +- io.swagger.core.v3:swagger-integration-jakarta:jar:2.2.15:compile
+[INFO]    |  |  \- io.swagger.core.v3:swagger-core-jakarta:jar:2.2.15:compile
+[INFO]    |  |     +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.15.1:compile
+[INFO]    |  |     \- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.15.1:compile
+[INFO]    |  \- org.yaml:snakeyaml:jar:2.0:compile
+[INFO]    +- com.fasterxml.jackson.core:jackson-databind:jar:2.15.2:compile
+[INFO]    |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2:compile
+[INFO]    |  \- com.fasterxml.jackson.core:jackson-core:jar:2.15.2:compile
+[INFO]    +- com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider:jar:2.15.2:compile
+[INFO]    |  +- com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-base:jar:2.15.2:compile
+[INFO]    |  \- com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:jar:2.15.2:compile
+[INFO]    +- org.springframework:spring-web:jar:6.0.11:compile
+[INFO]    |  +- org.springframework:spring-beans:jar:6.0.11:compile
+[INFO]    |  +- org.springframework:spring-core:jar:6.0.11:compile
+[INFO]    |  |  \- org.springframework:spring-jcl:jar:6.0.11:compile
+[INFO]    |  \- io.micrometer:micrometer-observation:jar:1.10.9:compile
+[INFO]    |     \- io.micrometer:micrometer-commons:jar:1.10.9:compile
+[INFO]    +- org.apache.commons:commons-lang3:jar:3.13.0:compile
+[INFO]    +- com.h2database:h2:jar:2.2.220:compile
+[INFO]    +- io.dropwizard.metrics:metrics-jakarta-servlets:jar:4.2.19:compile
+[INFO]    |  +- io.dropwizard.metrics:metrics-core:jar:4.2.19:compile
+[INFO]    |  +- io.dropwizard.metrics:metrics-healthchecks:jar:4.2.19:compile
+[INFO]    |  +- io.dropwizard.metrics:metrics-json:jar:4.2.19:compile
+[INFO]    |  +- io.dropwizard.metrics:metrics-jvm:jar:4.2.19:compile
+[INFO]    |  \- com.helger:profiler:jar:1.1.1:compile
+[INFO]    +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.0:compile
+[INFO]    |  \- jakarta.activation:jakarta.activation-api:jar:2.1.0:compile
+[INFO]    \- jakarta.xml.ws:jakarta.xml.ws-api:jar:4.0.0:compile
+[INFO]       \- jakarta.xml.soap:jakarta.xml.soap-api:jar:3.0.0:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.311 s
+[INFO] Finished at: 2024-03-30T08:35:54Z
+[INFO] ------------------------------------------------------------------------

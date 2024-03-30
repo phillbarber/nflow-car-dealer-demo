@@ -1,4 +1,4 @@
-package org.example;
+package com.github.phillbarber.nflow;
 
 import io.nflow.jetty.StartNflow;
 
