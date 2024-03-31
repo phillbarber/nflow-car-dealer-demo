@@ -20,6 +20,43 @@
             <artifactId>nflow-jetty</artifactId>
             <version>9.0.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.2.2</version>
+            <exclusions>
+                <!--
+                This exclusion prevents org.slf4j:slf4j-api:jar:1.7.36 from bieng imported and somehow giving us error:
+                SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+                SLF4J: Defaulting to no-operation (NOP) logger implementation
+                This is weird because - io.nflow:nflow-engine:jar:9.0.0:compile pulls in  org.slf4j:log4j-over-slf4j:jar:2.0.7:compile
+                I thought maven would pick highest version ? ¯\_(ツ)_/¯
+                -->
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Test Dependency -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wiremock</groupId>
+            <artifactId>wiremock-standalone</artifactId>
+            <!-- Have to use standalone to avoid java.lang.NoClassDefFoundError:
+            org/eclipse/jetty/http/compression/HuffmanEncoder -->
+            <version>3.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
