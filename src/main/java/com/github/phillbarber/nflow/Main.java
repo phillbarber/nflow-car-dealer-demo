@@ -12,7 +12,7 @@ public class Main {
 
     public static void start() throws Exception {
         StartNflow startNflow = new StartNflow();
-        startNflow.registerSpringContext(CreditApplicationWorkflow.class);
+        startNflow.registerSpringContext(CreditApplicationWorkflow.class, OrderResource.class);
         local = startNflow.startJetty(7500, "local", "");
     }
 

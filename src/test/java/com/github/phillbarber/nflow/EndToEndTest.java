@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @WireMockTest
 public class EndToEndTest {
 
-    public static final String WORKFLOW_JSON_FILE = "workflows/car-order-workflow.json";
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     public static final String restFacadeURL = "http://localhost:7500";
     public static final String restFacadeOrderURL = restFacadeURL + "/order";
@@ -46,7 +45,7 @@ public class EndToEndTest {
     }
 
     @Test
-    public void happyPathOrder() throws IOException {
+    public void happyPathOrder(WireMockRuntimeInfo wmRuntimeInfo) throws IOException {
         stubServices.orderServiceReturnsValidOrderFor("Blista");
         stubServices.saveOrderReturnsOK();
         stubServices.priceServiceReturnsPrice();
