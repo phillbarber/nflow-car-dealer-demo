@@ -85,7 +85,7 @@ public class EndToEndTest {
     private static HashMap getHappyPathInput() throws IOException {
         return new ObjectMapper().readValue("""
                 {
-                  "type": "creditApplicationProcess",
+                  "type": "carOrderWorkflow",
                   "businessKey": "123",
                   "stateVariables": {
                     "requestData": {
