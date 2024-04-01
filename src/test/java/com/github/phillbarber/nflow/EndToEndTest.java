@@ -5,6 +5,7 @@ import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.classic.methods.HttpPut;
 import org.apache.hc.client5.http.impl.classic.BasicHttpClientResponseHandler;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.core5.http.io.entity.StringEntity;
@@ -26,7 +27,7 @@ public class EndToEndTest {
 
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     public static final String restFacadeURL = "http://localhost:7500";
-    public static final String restFacadeOrderURL = restFacadeURL + "/order";
+    public static final String restFacadeOrderURL = restFacadeURL + "/nflow/api/v1/workflow-instance";
 
 
     private final HttpClient httpClient = HttpClientBuilder.create().build();
@@ -68,12 +69,12 @@ public class EndToEndTest {
     private Map submitOrderToRestFacade(HashMap happyPathInput) {
 
         Map order;
-        HttpPost httpPost = new HttpPost(restFacadeOrderURL);
+        HttpPut httpPut = new HttpPut(restFacadeOrderURL);
         try {
 
-            httpPost.setEntity(new StringEntity(OBJECT_MAPPER.writer().writeValueAsString(happyPathInput)));
-            httpPost.setHeader(new BasicHeader("content-type", "application/json"));
-            String execute = httpClient.execute(httpPost, new BasicHttpClientResponseHandler());
+            httpPut.setEntity(new StringEntity(OBJECT_MAPPER.writer().writeValueAsString(happyPathInput)));
+            httpPut.setHeader(new BasicHeader("content-type", "application/json"));
+            String execute = httpClient.execute(httpPut, new BasicHttpClientResponseHandler());
             order = OBJECT_MAPPER.reader().readValue(execute, Map.class);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -84,17 +85,30 @@ public class EndToEndTest {
     private static HashMap getHappyPathInput() throws IOException {
         return new ObjectMapper().readValue("""
                 {
-                  "order" : {
-                    "car" : {
-                      "make": "Blista",
-                      "model": "Compact"
-                    },
-                    "customer" :{
-                      "id" : "12345"
+                  "type": "creditApplicationProcess",
+                  "businessKey": "123",
+                  "stateVariables": {
+                    "requestData": {
+                        "customerId": "12345",
+                        "amount": 123
                     }
                   }
                 }
                 """, HashMap.class);
+
+//        return new ObjectMapper().readValue("""
+//                {
+//                  "order" : {
+//                    "car" : {
+//                      "make": "Blista",
+//                      "model": "Compact"
+//                    },
+//                    "customer" :{
+//                      "id" : "12345"
+//                    }
+//                  }
+//                }
+//                """, HashMap.class);
     }
 
     private static HashMap getUnHappyPathInput() throws IOException {
