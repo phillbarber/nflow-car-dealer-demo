@@ -1,5 +1,6 @@
 package com.github.phillbarber.nflow;
 
+import com.github.phillbarber.nflow.remoteservices.BasePriceRemoteService;
 import io.nflow.engine.workflow.curated.State;
 import io.nflow.engine.workflow.definition.*;
 import org.slf4j.Logger;
@@ -24,11 +25,16 @@ public class CarOrderWorkflow extends WorkflowDefinition {
 
     private static final WorkflowState ERROR = new State("error", manual, "Manual processing of failed applications");
 
-    public CarOrderWorkflow() {
+
+    private BasePriceRemoteService remoteService;
+    //private BasePriceRemoteService remoteService;
+
+    public CarOrderWorkflow(BasePriceRemoteService remoteService) {
         super("carOrderWorkflow", ORDER_RECEIVED, ERROR,
                 new WorkflowSettings.Builder().setMinErrorTransitionDelay(ZERO).setMaxErrorTransitionDelay(ZERO)
                         .setShortTransitionDelay(ZERO).setMaxRetries(3).build());
-        setDescription("Mock workflow that makes credit decision, creates loan, deposits the money and updates credit application");
+        this.remoteService = remoteService;
+        setDescription("Dummy Workflow that simulates a car order workflow");
         permit(ORDER_RECEIVED, CHECK_ORDER_IS_VALID);
         permit(CHECK_ORDER_IS_VALID, GET_CUSTOMER_DETAILS);
         permit(CHECK_ORDER_IS_VALID, DONE);
@@ -38,50 +44,43 @@ public class CarOrderWorkflow extends WorkflowDefinition {
     }
 
     public NextAction orderReceived(@SuppressWarnings("unused") StateExecution execution,
-                                              @StateVar(value = "requestData", readOnly = true) Map request,
-                                              @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                              @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("orderReceived");
-        return moveToState(DONE, "Done");
+        return moveToState(CHECK_ORDER_IS_VALID, "Order Has Been Received");
     }
 
     public NextAction checkOrderIsValid(@SuppressWarnings("unused") StateExecution execution,
-                                    @StateVar(value = "requestData", readOnly = true) Map request,
-                                    @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                    @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("orderReceived");
         return moveToState(GET_CUSTOMER_DETAILS, "Done");
     }
 
     public NextAction getCustomerDetails(@SuppressWarnings("unused") StateExecution execution,
-                                        @StateVar(value = "requestData", readOnly = true) Map request,
-                                        @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                        @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("orderReceived");
         return moveToState(GET_BASE_PRICE, "Done");
     }
 
     public NextAction getBasePrice(@SuppressWarnings("unused") StateExecution execution,
-                                         @StateVar(value = "requestData", readOnly = true) Map request,
-                                         @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                         @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("orderReceived");
         return moveToState(SAVE_NEW_ORDER, "Done");
     }
 
     public NextAction saveNewOrder(@SuppressWarnings("unused") StateExecution execution,
-                                         @StateVar(value = "requestData", readOnly = true) Map request,
-                                         @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                         @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("orderReceived");
         return moveToState(DONE, "Done");
     }
 
 
     public void done(@SuppressWarnings("unused") StateExecution execution,
-                                    @StateVar(value = "requestData", readOnly = true) Map request,
-                                    @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                                    @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("done");
     }
 
     public void error(@SuppressWarnings("unused") StateExecution execution,
-                     @StateVar(value = "requestData", readOnly = true) Map request,
-                     @StateVar(instantiateIfNotExists = true, value = "info") CreditApplicationWorkflow.WorkflowInfo info) {
+                     @StateVar(value = "requestData", readOnly = true) Map request) {
         logger.info("error");
     }
 
