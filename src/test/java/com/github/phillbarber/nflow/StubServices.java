@@ -1,5 +1,7 @@
 package com.github.phillbarber.nflow;
 
+import java.text.MessageFormat;
+
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 public class StubServices {
@@ -29,12 +31,13 @@ public class StubServices {
     }
 
     public void customerServiceReturnsCustomerFor(String customerId) {
-        stubFor(get(urlPathMatching(CustomerServiceRoot + customerId)).willReturn(ok().withBody("""
+        stubFor(get(urlPathMatching(CustomerServiceRoot + customerId)).willReturn(ok().withBody(String.format("""
                 {
+                     "id" : "%s",
                      "name" : "Marty McFly",
                      "loyaltyPoints": 12
                  }
-                """)));
+                """, customerId))));
     }
 
     public void customerServiceReturnsNotFoundCustomerFor(String customerId) {

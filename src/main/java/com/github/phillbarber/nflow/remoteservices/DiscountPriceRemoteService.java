@@ -7,9 +7,12 @@ import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.BasicHttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 
+@Component
 public class DiscountPriceRemoteService {
     private HttpClient httpClient;
     private final String serviceRootURI;
@@ -23,7 +26,7 @@ public class DiscountPriceRemoteService {
         this.objectMapper = objectMapper;
     }
 
-    public DiscountPriceResponse getDiscountPrice(OrderRequest orderRequest, Integer basePrice, Integer customerLoyaltyPoints) {
+    public DiscountPriceResponse getDiscountPrice(OrderRequest orderRequest, BigDecimal basePrice, Integer customerLoyaltyPoints) {
         try {
 
             HttpPost request = new HttpPost( serviceRootURI + "/discount-service/api/v1/price");
@@ -36,7 +39,7 @@ public class DiscountPriceRemoteService {
         }
     }
 
-    private static HashMap<Object, Object> buildRequest(OrderRequest orderRequest, Integer basePrice, Integer customerLoyaltyPoints) {
+    private static HashMap<Object, Object> buildRequest(OrderRequest orderRequest, BigDecimal basePrice, Integer customerLoyaltyPoints) {
         HashMap<Object, Object> request = new HashMap<>();
         request.put("order", orderRequest);
         request.put("basePrice", basePrice);

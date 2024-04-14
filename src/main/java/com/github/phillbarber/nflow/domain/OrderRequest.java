@@ -1,5 +1,5 @@
 package com.github.phillbarber.nflow.domain;
 
-public record OrderRequest(Car car, Customer customer) {
+public record OrderRequest(String carMake, String carModel, String customerId) {
 
 }

@@ -17,9 +17,12 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.URI;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -50,7 +53,7 @@ public class EndToEndTest {
 
     @Test
     public void happyPathOrder(WireMockRuntimeInfo wmRuntimeInfo) throws IOException {
-        stubServices.orderServiceReturnsValidOrderFor("Blista");
+        stubServices.orderServiceReturnsValidOrderFor("Ford");
         stubServices.saveOrderReturnsOK();
         stubServices.priceServiceReturnsPrice();
         stubServices.customerServiceReturnsCustomerFor("12345");
@@ -58,17 +61,30 @@ public class EndToEndTest {
 
         Map response =  submitOrderToRestFacade(getHappyPathInput());
 
+
+
+        await()
+                .atLeast(Duration.of(1, ChronoUnit.SECONDS))
+                .atMost(Duration.of(10, ChronoUnit.MINUTES))
+                .with()
+                .pollInterval(Duration.of(1, ChronoUnit.SECONDS))
+                .until(() -> {
+                    Map workflowById = getWorkflowById((Integer) response.get("id"));
+                    return workflowById.get("status").equals("finished");
+                });
+
         Map workflowById = getWorkflowById((Integer) response.get("id"));
 
-        assertNotNull(response.get("id"));
-        assertNotNull(response.get("customerId"));
-        assertNotNull(response.get("customerName"));
-        assertNotNull(response.get("customerLoyaltyPoints"));
-        assertEquals(response.get("basePrice"), 60000);
-        assertEquals(response.get("totalPrice"), 54000);
-        assertEquals(response.get("currency"), "GBP");
-        assertEquals(response.get("promotionCode"), "ABCDE1234");
-        assertEquals(response.get("discount"), 0.1);
+        Map theOrder = (Map) ((Map) workflowById.get("stateVariables")).get("order");
+
+        assertNotNull(theOrder.get("id"));
+        assertNotNull(theOrder.get("customerId"));
+        assertNotNull(theOrder.get("customerName"));
+        assertNotNull(theOrder.get("customerLoyaltyPoints"));
+        assertEquals(theOrder.get("basePrice"), 60000);
+        assertEquals(theOrder.get("totalPrice"), 54000);
+        assertEquals(theOrder.get("currency"), "GBP");
+        assertEquals(theOrder.get("discount"), 0.1);
     }
 
     private Map submitOrderToRestFacade(HashMap happyPathInput) {
@@ -111,30 +127,17 @@ public class EndToEndTest {
     private static HashMap getHappyPathInput() throws IOException {
         return new ObjectMapper().readValue("""
                 {
-                  "type": "carOrderWorkflow",
-                  "businessKey": "123",
-                  "stateVariables": {
-                    "requestData": {
-                        "customerId": "12345",
-                        "amount": 123
-                    }
-                  }
-                }
+                   "type": "carOrderWorkflow",
+                   "businessKey": "123",
+                   "stateVariables": {
+                     "requestData": {
+                       "carMake": "Ford",
+                       "carModel": "Modeo",
+                       "customerId": "12345"
+                     }
+                   }
+                 }
                 """, HashMap.class);
-
-//        return new ObjectMapper().readValue("""
-//                {
-//                  "order" : {
-//                    "car" : {
-//                      "make": "Blista",
-//                      "model": "Compact"
-//                    },
-//                    "customer" :{
-//                      "id" : "12345"
-//                    }
-//                  }
-//                }
-//                """, HashMap.class);
     }
 
     private static HashMap getUnHappyPathInput() throws IOException {
