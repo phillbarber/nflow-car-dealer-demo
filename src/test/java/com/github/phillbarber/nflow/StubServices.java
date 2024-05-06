@@ -15,7 +15,7 @@ public class StubServices {
     public void orderServiceReturnsInvalidOrderFor(String carMake) {
         stubFor(post(OrderServiceCheckOrder).withRequestBody(containing(carMake)).willReturn(ok().withBody("""
                 {
-                     "rejectionMessage" : "Sorry we don't sell Sentinels",
+                     "rejectionMessage" : "Sorry we don't sell cars today for some reason.",
                      "isValid": false
                  }
                 """)));

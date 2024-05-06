@@ -23,8 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @WireMockTest
@@ -52,7 +51,7 @@ public class EndToEndTest {
     }
 
     @Test
-    public void happyPathOrder(WireMockRuntimeInfo wmRuntimeInfo) throws IOException {
+    public void orderAccepted(WireMockRuntimeInfo wmRuntimeInfo) throws IOException {
         stubServices.orderServiceReturnsValidOrderFor("Ford");
         stubServices.saveOrderReturnsOK();
         stubServices.priceServiceReturnsPrice();
@@ -85,6 +84,38 @@ public class EndToEndTest {
         assertEquals(theOrder.get("totalPrice"), 54000);
         assertEquals(theOrder.get("currency"), "GBP");
         assertEquals(theOrder.get("discount"), 0.1);
+    }
+
+
+    @Test
+    public void orderRejectedWhenValidationServiceRejects(WireMockRuntimeInfo wmRuntimeInfo) throws IOException {
+        stubServices.orderServiceReturnsInvalidOrderFor("Ford");
+        stubServices.saveOrderReturnsOK();
+        stubServices.priceServiceReturnsPrice();
+        stubServices.customerServiceReturnsCustomerFor("12345");
+        stubServices.discountServiceReturns();
+
+        Map response =  submitOrderToRestFacade(getHappyPathInput());
+
+
+
+        await()
+                .atLeast(Duration.of(1, ChronoUnit.SECONDS))
+                .atMost(Duration.of(10, ChronoUnit.MINUTES))
+                .with()
+                .pollInterval(Duration.of(1, ChronoUnit.SECONDS))
+                .until(() -> {
+                    Map workflowById = getWorkflowById((Integer) response.get("id"));
+                    return workflowById.get("status").equals("finished");
+                });
+
+        Map workflowById = getWorkflowById((Integer) response.get("id"));
+
+        Map rejection = (Map) ((Map) workflowById.get("stateVariables")).get("validationResponse");
+
+        assertFalse((Boolean)rejection.get("isValid"));
+        assertEquals(rejection.get("rejectionMessage"), "Sorry we don't sell cars today for some reason.");
+        assertNull(((Map) workflowById.get("stateVariables")).get("order"));
     }
 
     private Map submitOrderToRestFacade(HashMap happyPathInput) {

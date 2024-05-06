@@ -25,6 +25,7 @@ public class CarOrderWorkflow extends WorkflowDefinition {
     private static final WorkflowState GET_BASE_PRICE = new State("getBasePrice", "Get Base Price");
     private static final WorkflowState GET_DISCOUNT = new State("getDiscount", "Get Discount");
     private static final WorkflowState SAVE_NEW_ORDER = new State("saveNewOrder", "Save New Order");
+    private static final WorkflowState SAVE_REJECTED_ORDER = new State("saveRejectedOrder", "Save Rejected Order");
     private static final WorkflowState DONE = new State("done", WorkflowStateType.end, "Order Request Finished");
 
     private static final WorkflowState ERROR = new State("error", manual, "Manual processing of failed applications");
@@ -68,9 +69,9 @@ public class CarOrderWorkflow extends WorkflowDefinition {
         OrderValidationResponse validationResponse = orderValidationService.getValidationResponse(request);
         mutableValidationResponse.setVal(validationResponse);
         if (validationResponse.isValid()){
-            logger.info("VALID");
+            return moveToState(GET_CUSTOMER_DETAILS, "Done");
         }
-        return moveToState(GET_CUSTOMER_DETAILS, "Done");
+        return moveToState(DONE, validationResponse.rejectionMessage());
 
     }
 
@@ -120,7 +121,6 @@ public class CarOrderWorkflow extends WorkflowDefinition {
                 mutableDiscountPrice.getVal().totalPrice(),
                 "",
                 mutableDiscountPrice.getVal().discount()
-
         ));
 
         //SAVE TO DB
